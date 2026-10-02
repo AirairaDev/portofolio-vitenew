@@ -33,8 +33,8 @@ function App() {
         <h2 className="text-4xl font-medium mb-6">Web Developer</h2>
         <p className="text-base/loose mb-6 opacity-50">IT Enthusiast yang tertarik pada teknologi, web development, dan pemrograman. Terus belajar, berkarya, dan mengembangkan skill melalui berbagai project.</p>
         <div className="flex items-center sm:gap-4 gap-2">
-          <a href="#" className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600">Download CV <i className="ri-download-line ri-lg"></i></a>
-          <a href="#proyek" className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600">Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i></a>
+          <a href="#" className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 hover:border border-white">Service <i className="ri-arrow-right-up-line ri-lg"></i></a>
+          <a href="#proyek" className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600 hover:border border-white">Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i></a>
         </div>
       </div>
       <InteractiveProductCard imageUrl={DataImage.HeroImage} alt="Hero Image" className="w-85 md:ml-auto mr-7 " loading="lazy"/>
