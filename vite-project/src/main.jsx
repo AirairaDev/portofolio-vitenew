@@ -13,7 +13,7 @@ import "aos/dist/aos.css";
 setTimeout(() => {
   AOS.init();
   AOS.refresh();
-}, 3000);
+}, 4000);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
