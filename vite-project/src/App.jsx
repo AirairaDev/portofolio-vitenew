@@ -2,10 +2,27 @@ import DataImage from "./data";
 import { InteractiveProductCard } from "./components/card-7";
 import {listTools, listProyek} from "./data";
 import DarkVeil from "./components/Darkveil";
+import { useState } from "react";
+import ScrollVelocity from "./components/ScrollVelocity";
 
 
 
-function App() {
+function App(
+  
+) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const proyekPerPage = 6;
+  
+  const totalPage = Math.ceil(listProyek.length / proyekPerPage);
+  
+  const indexAwal = (currentPage - 1) * proyekPerPage;
+  const proyekTampil = listProyek.slice(
+    indexAwal,
+    indexAwal + proyekPerPage
+  );
+
+  const [kategori, setKategori] = useState("web");
   return (
     <>
     <div className="relative min-h-screen overflow-hidden">
@@ -25,15 +42,18 @@ function App() {
 
     <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
       <div>
-        <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
+        <div
+         className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
         {/* <img src={DataImage.HeroImage} alt="Hero Image" className="w-10 rounded-b-md"/> */}
         <q>Belajar dari setiap langkah, tumbuh dari setiap pengalaman.</q>
         </div>
-        <h1 className="text-5xl/tight font-bold mt-5">Khumairah Afrida</h1>
-        <h2 className="text-4xl font-medium mb-6">Web Developer</h2>
-        <p className="text-base/loose mb-6 opacity-50">IT Enthusiast yang tertarik pada teknologi, web development, dan pemrograman. Terus belajar, berkarya, dan mengembangkan skill melalui berbagai project.</p>
+        <h1 
+        data-aos="fade-right"
+        className="text-5xl/tight font-bold mt-5">Khumairah Afrida</h1>
+        <h2 data-aos="fade-right" className="text-3xl font-medium mb-6">Web Developer & IT Support</h2>
+        <p data-aos="fade-right" className="text-base/loose mb-6 opacity-50">IT Enthusiast yang tertarik pada teknologi, IT Support, web development, dan pemrograman. Terus belajar, berkarya, dan mengembangkan skill melalui berbagai project serta pengalaman praktik.</p>
         <div className="flex items-center sm:gap-4 gap-2">
-          <a href="#" className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 hover:border border-white">Service <i className="ri-arrow-right-up-line ri-lg"></i></a>
+          <a href="https://drive.google.com/drive/folders/1btn028lOZ88nFK_1v99ebyAU9oZNM3yy?usp=drive_link" className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 hover:border border-white">Sertifikasi <i className="ri-arrow-right-up-line ri-lg"></i></a>
           <a href="#proyek" className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600 hover:border border-white">Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i></a>
         </div>
       </div>
@@ -42,11 +62,13 @@ function App() {
 
     {/* tentang */}
     <div className="tentang mt-26 py-10" id="tentang">
-    <h1 className="text-4xl/snug font-bold mb-7">Tentang Saya</h1>
-      <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 backdrop-brightness-50 rounded-lg">
+    <h1 
+    data-aos="fade-up"
+    className="text-4xl/snug font-bold mb-7">Tentang Saya</h1>
+      <div data-aos="fade-up" className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 backdrop-brightness-50 rounded-lg">
         <img src={DataImage.HeroImage}alt="Image" className="w-12 rounded-b-md mb-10 sm:hidden" loading="lazy"/>
-        <p className="text-base/loose mb-10">Saya adalah seorang pelajar yang memiliki ketertarikan pada dunia teknologi dan pengembangan digital. Saya senang mengeksplorasi web development, mempelajari teknologi baru, serta mengubah ide menjadi sebuah karya yang fungsional dan menarik.</p>
-        <p className="text-base/loose mb-10">Melalui berbagai project yang saya kerjakan, saya terus mengembangkan kemampuan dalam coding, problem solving, dan kreativitas. Saya percaya bahwa proses belajar tidak pernah berhenti, dan setiap project merupakan kesempatan untuk berkembang menjadi lebih baik.</p>
+        <p className="text-base/loose mb-10">Saya adalah seorang pelajar yang memiliki ketertarikan pada dunia teknologi dan pengembangan digital. Saya senang mengeksplorasi IT Support, networking, web development, mempelajari teknologi baru, serta mengubah ide menjadi sebuah karya yang fungsional dan menarik.</p>
+        <p className="text-base/loose mb-10">Melalui berbagai project dan pengalaman praktik yang saya kerjakan, saya terus mengembangkan kemampuan dalam coding, troubleshooting, problem solving, dan kreativitas. Saya percaya bahwa proses belajar tidak pernah berhenti, dan setiap project merupakan kesempatan untuk berkembang serta menjadi lebih baik.</p>
         <div className="flex items-center justify-between">
           <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md sm:block hidden" loading="lazy"/>
           <div className="flex items-center gap-6">
@@ -58,21 +80,54 @@ function App() {
         </div>
       </div>
 
-      <div className="tools mt-26">
+      <div data-aos="fade-up" className="tools mt-26">
         <h1 className="text-4xl/snug font-bold mb-4">Tools</h1>
-        <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50">Berikut ini beberapa tools yang biasa saya pakai untuk pembuatan Website ataupun Design</p>
+        <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50 mb-6">Berikut ini teknologi dan tools yang saya gunakan</p>
+        <div className="flex w-fit p-1 bg-zinc-900/80 rounded-xl border border-zinc-800 mb-8">
+  <button
+    onClick={() => setKategori("web")}
+    className={`px-5 py-2 rounded-lg font-semibold transition-all ${
+      kategori === "web"
+        ? "bg-violet-600 text-white"
+        : "bg-transparent text-zinc-400 hover:text-white"
+    }`}
+  >
+    Web & Design
+  </button>
+
+  <button
+    onClick={() => setKategori("networking")}
+    className={`px-5 py-2 rounded-lg font-semibold transition-all ${
+      kategori === "networking"
+        ? "bg-violet-600 text-white"
+        : "bg-transparent text-zinc-400 hover:text-white"
+    }`}
+  >
+    Networking
+  </button>
+</div>
         <div className="toolsbox mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
 
-          {listTools.map(tool => (
-            <div className="flex items-center gap-2 p-3 border border-zinc-600 rounded-b-md hover:bg-zinc-800 group" key={tool.id}>
-            <img src={tool.gambar} alt="tollsimg" className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900"/>
-            <div>
-              <h4 className="font-bold">{tool.nama}</h4>
-              <p className="opacity-50">{tool.ket}</p>
-            </div>
-          </div>
+        {listTools
+          .filter((tool) => tool.kategori === kategori)
+          .map((tool) => (
+            <div
+            data-aos="zoom-in-up"
+            className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 hover:border-white group"
+            key={tool.id}
+            >
+            <img
+            src={tool.gambar}
+            alt={tool.nama}
+            className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900"
+            />
 
-          ))}
+            <div>
+            <h4 className="font-bold">{tool.nama}</h4>
+            <p className="opacity-50">{tool.ket}</p>
+            </div>
+            </div>
+        ))}
 
         </div>
       </div>
@@ -82,12 +137,14 @@ function App() {
 
     {/* proyek */}
 
-<div className="proyek mt-32 py-10" id="proyek">
+<div data-aos="fade-up" className="proyek mt-32 py-10" id="proyek">
   <h1 className="text-center text-4xl font-bold mb-2">Proyek</h1>
   <p className="text-base/loose text-center opacity-50">Berikut ini beberapa proyek yang telah saya buat</p>
-  <div className="proyekbox mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-    {listProyek.map(proyek => (
-      <div key={proyek.id} className="p-4 bg-zinc-800 rounded-b-md">
+  <div className="proyekbox mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 max-w-6xl mx-auto">
+    {proyekTampil.map((proyek) => (
+      <div 
+      data-aos="zoom-in-up"
+      key={proyek.id} className="p-4 bg-zinc-800 rounded-2xl">
         <img src={proyek.gambar} alt="proyekimg" loading="lazy"/>
         <div>
           <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
@@ -97,19 +154,65 @@ function App() {
               <p className="py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-b-md font-semibold" key={index}>{tool}</p>
             ))}
           </div>
-          <div className="mt-8 text-center">
-            <a className="bg-violet-700 p-3 rounded-b-lg block border border-zinc-600 hover:bg-violet-600" href="#">Demo</a>
+          
+          <div className="flex items-center justify-center text-center mt-8 sm:gap-4 gap-2">
+            <a
+            href={proyek.link}
+            className="flex-1 bg-violet-700 p-3 rounded-2xl border border-zinc-600 hover:bg-violet-600 hover:border-white"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i className="ri-arrow-right-up-box-line ri-lg"></i> Demo</a>
+
+            <a
+            href={proyek.linkgit}
+            className="flex-1 bg-zinc-700 p-3 rounded-2xl border border-zinc-600 hover:bg-zinc-600 hover:border-white"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i className={proyek.LinkIcon || "ri-github-fill ri-lg"}></i> {proyek.linkName || "Github"}</a>
           </div>
         </div>
       </div>
-
+      
     ))}
+    
   </div>
+  <div className="flex items-center justify-center gap-4 mt-10">
+
+  <button
+    onClick={() => setCurrentPage(currentPage - 1)}
+    disabled={currentPage === 1}
+    className="w-12 h-12 rounded-xl bg-zinc-800 border border-zinc-600 hover:bg-zinc-700 disabled:opacity-30 disabled:cursor-not-allowed"
+  >
+    ←
+  </button>
+
+  <span className="text-lg font-semibold">
+    {currentPage} / {totalPage}
+  </span>
+
+  <button
+    onClick={() => setCurrentPage(currentPage + 1)}
+    disabled={currentPage === totalPage}
+    className="w-12 h-12 rounded-xl bg-zinc-800 border border-zinc-600 hover:bg-zinc-700 disabled:opacity-30 disabled:cursor-not-allowed"
+  >
+    →
+  </button>
+
+</div>
 </div>
 
     {/* proyek */}
 
     {/* kontak */}
+    <ScrollVelocity
+    texts={["Let's Work Together", "Get in Touch"]}
+    velocity={100}
+    className="custom-scroll-text"
+    numCopies={6}
+    damping={50}
+    stiffness={400}
+    />
+
     <div className="kontak mt-26 sm:p-10 p-0" id="kontak">
       <h1 className="text-4xl mb-2 font-bold text-center">Kontak</h1>
       <p className="text-base/loose text-center mb-10 opacity-50">Mari terhubung dengan saya.</p>

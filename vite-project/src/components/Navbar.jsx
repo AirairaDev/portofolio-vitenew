@@ -22,7 +22,7 @@ useEffect(() => {
   return (
     <div className="sticky top-0 z-50 pt-5">
 
-    <div className="navbar py-1 flex items-center justify-between bg-transparent backdrop-brightness-40 rounded-3xl border border-white">
+    <div className="navbar py-1 flex items-center justify-between bg-transparent backdrop-brightness-40 rounded-3xl border border-white mt-5">
       <div className="logo">
         <img src="./assets/Airalogo.png" alt="" className="w-25 p-1 z-50 md:bg-transparent sm:block hidden"/>
       </div>

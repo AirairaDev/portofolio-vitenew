@@ -7,6 +7,13 @@ import Navbar from './components/Navbar.jsx'
 import 'remixicon/fonts/remixicon.css'
 import Footer from './components/Footer.jsx'
 import Preloader from './components/Preloader.jsx'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+setTimeout(() => {
+  AOS.init();
+  AOS.refresh();
+}, 3000);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
