@@ -49,7 +49,7 @@ function App(
         </div>
         <h1 
         data-aos="fade-right"
-        className="text-5xl/tight font-bold mt-5">Khumairah Afrida</h1>
+        className="text-5xl/tight font-bold mt-5">Khumairah Afrida Maryam</h1>
         <h2 data-aos="fade-right" className="text-3xl font-medium mb-6">Web Developer & IT Support</h2>
         <p data-aos="fade-right" className="text-base/loose mb-6 opacity-50">IT Enthusiast yang tertarik pada teknologi, IT Support, web development, dan pemrograman. Terus belajar, berkarya, dan mengembangkan skill melalui berbagai project serta pengalaman praktik.</p>
         <div className="flex items-center sm:gap-4 gap-2">
