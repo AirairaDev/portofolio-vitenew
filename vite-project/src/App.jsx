@@ -51,7 +51,7 @@ function App(
         data-aos="fade-right"
         className="text-5xl/tight font-bold mt-5">Khumairah Afrida Maryam</h1>
         <h2 data-aos="fade-right" className="text-3xl font-medium mb-6">Web Developer & IT Support</h2>
-        <p data-aos="fade-right" className="text-base/loose mb-6 opacity-50">IT Enthusiast yang tertarik pada teknologi, IT Support, web development, dan pemrograman. Terus belajar, berkarya, dan mengembangkan skill melalui berbagai project serta pengalaman praktik.</p>
+        <p data-aos="fade-right" className="text-base/loose mb-6 opacity-50">IT Enthusiast yang tertarik pada teknologi, IT Support, Web Development, dan pemrograman. Terus belajar, berkarya, dan mengembangkan skill melalui berbagai project serta pengalaman praktik.</p>
         <div className="flex items-center sm:gap-4 gap-2">
           <a href="https://drive.google.com/drive/folders/1btn028lOZ88nFK_1v99ebyAU9oZNM3yy?usp=drive_link" className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 hover:border border-white">Sertifikasi <i className="ri-arrow-right-up-line ri-lg"></i></a>
           <a href="#proyek" className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600 hover:border border-white">Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i></a>
